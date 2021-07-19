@@ -24,19 +24,14 @@ client.on('message', msg => {
   		}
 		else if (msg_tab[i].includes('https://twitter.com')) {
 	  		var index = msg_tab[i].search('https://twitter.com');
-	  		console.log(index);
-	  		console.log(msg_tab);
 	  		raw_twitter_link = msg_tab[i].substr(index);
 	  		msg_tab_glued_msg = msg_tab[i].split('https://twitter.com');
 	  		side_message = side_message.concat(msg_tab_glued_msg[0], " ");
-	  		console.log(raw_twitter_link);
 	  	}
 	  	else {
 	  		side_message = side_message.concat(msg_tab[i], " ");
 	  	}
   	}
-  	/*var index = msg.content.indexOf('https');
-  	const raw_twitter_link = msg.content.substr(index);*/
 
   	var options = {
 	  url: raw_twitter_link,
@@ -58,6 +53,5 @@ client.on('message', msg => {
 
   }
 });
-
 
 client.login(process.env.TOKEN);
