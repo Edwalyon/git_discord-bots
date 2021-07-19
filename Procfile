@@ -1,0 +1,1 @@
+worker: node fx_twitter.js
