@@ -44,7 +44,11 @@ client.on('message', msg => {
 		const $ = cheerio.load(body);
 		const description = $("meta[property='og:description']")[0];
 		if (description.attribs.content.includes('https://t.co')) {
-		  	msg.delete();
+		  	msg.delete().catch(error => {
+			if (error.code !== Discord.Constants.APIErrors.UNKNOWN_MESSAGE) {
+				console.error('Failed to delete the message:', error);
+			}
+		});
 			msg.channel.send("<@" + msg.author.id + "> : " + side_message + "\n" + raw_twitter_link.substr(0,8) + 'fx' + raw_twitter_link.substr(8));
 		} 
 	}
