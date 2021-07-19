@@ -2,6 +2,11 @@
     "name": "auto-fx-twitter",
     "version": "1.0.0",
     "description": "A Discord bot!",
+    "dependencies": {
+        "discord.js": "^12.5.3",
+        "metascraper": "^5.22.10",
+        "metascraper-description": "^5.22.9",
+    },
     "main": "fx_twitter.js",
     "scripts": {
         "start": "node fx_twitter.js"
