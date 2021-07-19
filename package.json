@@ -5,7 +5,8 @@
     "dependencies": {
         "discord.js": "^12.5.3",
         "metascraper": "^5.22.10",
-        "metascraper-description": "^5.22.9"
+        "metascraper-description": "^5.22.9",
+        "request": "2.88.2"
     },
     "main": "fx_twitter.js",
     "scripts": {
